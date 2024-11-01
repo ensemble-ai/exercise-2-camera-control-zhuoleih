@@ -15,7 +15,12 @@ extends Camera3D
 
 func _ready() -> void:
 	current = false
-	position += Vector3(0.0, dist_above_target, 0.0) 
+	#position += Vector3(0.0, dist_above_target, 0.0) 
+
+func active_as_current() -> void:
+	global_position.x = target.global_position.x
+	global_position.z = target.global_position.z
+	make_current()
 
 
 func _process(delta: float) -> void:

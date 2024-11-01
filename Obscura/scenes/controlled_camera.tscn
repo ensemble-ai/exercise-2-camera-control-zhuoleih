@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu80st6dhcnla"]
+[gd_scene load_steps=3 format=3 uid="uid://bu80st6dhcnla"]
 
-[ext_resource type="Script" path="res://scripts/camera_controllers/push_box.gd" id="1_og1vv"]
+[ext_resource type="Script" path="res://scripts/camera_controllers/camera_controller_base.gd" id="1_pdv7w"]
+[ext_resource type="Script" path="res://scripts/debug_camera.gd" id="2_sqm5t"]
 
 [node name="CameraController" type="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1, 0)
-script = ExtResource("1_og1vv")
+script = ExtResource("1_pdv7w")
+draw_camera_logic = true
+
+[node name="debug" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_sqm5t")
